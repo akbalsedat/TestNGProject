@@ -4,6 +4,8 @@ public class UnitTestPractice {
 
     public static void main(String[] args) {
         //Assertion
+        //Unit test to check if our method works properly
+        // if assertion fails, that means there is some bug in our code
         verifyEquals("cba", reverseString("abc"));
     }
 
