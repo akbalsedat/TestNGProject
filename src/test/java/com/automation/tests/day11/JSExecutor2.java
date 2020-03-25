@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,12 +21,13 @@ public class JSExecutor2 {
     private JavascriptExecutor js;
 
     private String URL = "http://practice.cybertekschool.com/";
+    private String URL2 = "file:///C:/Users/myuser/AppData/Roaming/Sublime%20Text%203/Packages/User/index2.html";
 
     @BeforeMethod
     public void setup(){
         WebDriverManager.firefoxdriver().version("74").setup();
         driver = new FirefoxDriver();
-        driver.get(URL);
+        driver.get(URL2);
         driver.manage().window().maximize();
         BrowserUtil.wait(3);
     }
@@ -103,6 +105,24 @@ public class JSExecutor2 {
     js.executeScript("arguments[0].scrollIntoView(true)", link);
     Assert.assertTrue(link.isDisplayed());
 
+    }
+
+    @Test(description = "Dropdown menu")
+    public void handlingDropdown(){
+        // select the first operator using "select by value"
+        Select selectByValue = new Select(driver.findElement(By.id("SelectID_One")));
+        selectByValue.selectByValue("greenvalue");
+        //Thread.sleep(5000);
+
+// select the second dropdown using "select by visible text"
+        Select selectByVisibleText = new Select (driver.findElement(By.id("SelectID_Two")));
+        selectByVisibleText.selectByVisibleText("Lime");
+        //Thread.sleep(5000);
+
+// select the third dropdown using "select by index"
+        Select selectByIndex = new Select(driver.findElement(By.id("SelectID_Three")));
+        selectByIndex.selectByIndex(2);
+        //Thread.sleep(5000);
     }
 
     @AfterMethod
