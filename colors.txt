@@ -6,4 +6,11 @@ white
 purple
 pink
 magenta
+<<<<<<< HEAD
 blue
+=======
+yellow-purple
+
+blue-bell
+skyblue
+>>>>>>> 2c31c56c6ac2573a596fd2bd413f327856cf906c
