@@ -10,3 +10,6 @@ blue
 yellow-purple
 blue-bell
 skyblue
+
+
+seablue
