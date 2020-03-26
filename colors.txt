@@ -7,3 +7,6 @@ purple
 pink
 magenta
 yellow-purple
+
+blue-bell
+skyblue
