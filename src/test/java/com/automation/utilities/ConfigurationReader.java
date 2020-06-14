@@ -1,4 +1,4 @@
-package com.util;
+package com.automation.utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -18,7 +18,7 @@ public class ConfigurationReader {
         }
     }
 
-    public static String getProperty(String keyName) {
+    public static String getPropertyLocal(String keyName) {
         return configFile.getProperty(keyName);
     }
 }

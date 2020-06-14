@@ -1,6 +1,6 @@
 package com.automation.tests.practice;
 
-import com.util.BrowserUtil;
+import com.automation.utilities.BrowserUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

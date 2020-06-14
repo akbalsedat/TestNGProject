@@ -1,7 +1,7 @@
 package com.automation.tests.day12;
 
-import com.util.BrowserUtil;
-import com.util.DriverFactory;
+import com.automation.utilities.BrowserUtil;
+import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -16,9 +16,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class WebOrders {
     private WebDriver driver;

@@ -1,11 +1,8 @@
 package com.automation.tests.day9;
 
-import com.util.BrowserUtil;
-import com.util.DriverFactory;
+import com.automation.utilities.BrowserUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;

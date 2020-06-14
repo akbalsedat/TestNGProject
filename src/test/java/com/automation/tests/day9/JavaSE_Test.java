@@ -1,6 +1,6 @@
 package com.automation.tests.day9;
 // https://www.guru99.com/execute-javascript-selenium-webdriver.html
-import com.util.BrowserUtil;
+import com.automation.utilities.BrowserUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -10,7 +10,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.WeakHashMap;
 import java.util.concurrent.TimeUnit;
 
 public class JavaSE_Test {

@@ -1,21 +1,17 @@
 package com.automation.tests.vytrack.fleet;
 
-import com.util.BrowserUtil;
+import com.automation.utilities.BrowserUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import javax.swing.text.AbstractDocument;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -26,7 +22,7 @@ import java.util.Set;
 
 import static org.testng.Assert.assertEquals;
 
-public class VehiclesTests {
+public class VehiclesPageTest {
     private WebDriver driver;
     private Actions actions;
 
@@ -55,6 +51,14 @@ public class VehiclesTests {
     private By startDateBy = By.cssSelector("input[id*='date_selector_oro_calendar_event_form_start-uid']");
     private By startTimeBy = By.cssSelector("input[id*='time_selector_oro_calendar_event_form_start-uid']");
 
+    @BeforeMethod
+    public void setup(){
+        WebDriverManager.firefoxdriver().version("79").setup();
+        driver = new FirefoxDriver();
+        driver.get(URL);
+        driver.manage().window().maximize();
+        BrowserUtil.wait(5);
+    }
 
     @Test (description = "Verify page subtitle")
     public void verifyPageSubtitle(){
@@ -82,18 +86,6 @@ public class VehiclesTests {
         Assert.assertEquals(actual, expected);
 
     }
-
-    @Test (description = "Verifying subtitle in Costco website")
-    public void getSubtitleAtCostco(){
-        driver.get("https://www.costco.com/");
-        driver.manage().window().maximize();
-        driver.findElement(By.xpath("//a[@id='Home_Ancillary_3']")).click();
-        BrowserUtil.wait(3);
-        String actualText = driver.findElement(By.xpath("//h3[contains(text(),'Full Service Travel Immunization Program')]")).getText();
-        String expectedText = "Full Service Travel Immunization Program";
-        Assert.assertEquals(actualText, expectedText);
-    }
-
 
     /**
      *
@@ -172,7 +164,7 @@ public class VehiclesTests {
 
         Set<String> timeZones = ZoneId.getAvailableZoneIds();
         for (String each:
-             timeZones) {
+                timeZones) {
             if(each.startsWith("America"))
                 System.out.println(each);
         }
@@ -191,16 +183,6 @@ public class VehiclesTests {
         Assert.assertEquals(actualTime, expectedTime);
     }
 
-
-    @BeforeMethod
-    public void setup(){
-        WebDriverManager.firefoxdriver().version("79").setup();
-        driver = new FirefoxDriver();
-        driver.get(URL);
-        driver.manage().window().maximize();
-        BrowserUtil.wait(5);
-    }
-
     @AfterMethod
     public void tearDown(){
         if(driver != null){
@@ -210,3 +192,4 @@ public class VehiclesTests {
         }
     }
 }
+

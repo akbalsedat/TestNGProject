@@ -1,8 +1,7 @@
 package com.automation.tests.day9;
 
-import com.google.gson.internal.$Gson$Preconditions;
-import com.util.BrowserUtil;
-import com.util.DriverFactory;
+import com.automation.utilities.BrowserUtil;
+import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

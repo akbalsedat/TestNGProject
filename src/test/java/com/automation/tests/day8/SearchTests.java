@@ -1,6 +1,6 @@
 package com.automation.tests.day8;
 
-import com.util.BrowserUtil;
+import com.automation.utilities.BrowserUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
