@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class LoginPageTests {
+
     private WebDriver driver;
 
     private String URL = "https://qa2.vytrack.com/user/login";
@@ -25,6 +26,14 @@ public class LoginPageTests {
     private By usernameBy = By.id("prependedInput");
     private By passwordBy = By.id("prependedInput2");
     private By warningMessageBy = By.cssSelector("[class = 'alert alert-error'] > div");
+
+    @BeforeMethod
+    public void setup(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.get(URL);
+        driver.manage().window().maximize();
+    }
 
     @Test(description = "display warning message when invalid username is used.")
     public void invalidUserName(){
@@ -43,14 +52,6 @@ public class LoginPageTests {
         String actualTitle = driver.getTitle();
         String expectedTitle = "Dashboard";
         assertEquals(expectedTitle, actualTitle, "Page title is not correct!");
-    }
-
-    @BeforeMethod
-    public void setup(){
-        WebDriverManager.chromedriver().version("79").setup();
-        driver = new ChromeDriver();
-        driver.get(URL);
-        driver.manage().window().maximize();
     }
 
     @AfterMethod

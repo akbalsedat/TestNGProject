@@ -10,7 +10,12 @@ import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class NewLoginTests extends AbstractTestBase {
+
     @Test
     public void verifyPageTitle(){
         //test --> ExtentTest object
@@ -63,7 +68,7 @@ public class NewLoginTests extends AbstractTestBase {
         if (execute.equals("y")) {
             LoginPage loginPage = new LoginPage();
             loginPage.login(username, password);
-            test.info("Login as " + username);//log some steps
+            test.info("Login as " + username);
             test.info(String.format("First name: %s, Last name: %s, Username: %s", firstname, lastname, username));
             test.pass("Successfully logged in as " + username);
         } else {
@@ -72,4 +77,14 @@ public class NewLoginTests extends AbstractTestBase {
             throw new SkipException("Test was skipped for user: " + username);
         }
     }
+
+    @DataProvider
+    public Object[][] credentialsFromExcel() {
+        String path = "VytrackTestUsers.xlsx";
+        String spreadSheet = "QA3-short";
+        excelUtil = new ExcelUtil(path, spreadSheet);
+        // execute username password firstname lastname result
+        return excelUtil.getDataArray();
+    }
+
 }

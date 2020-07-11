@@ -24,7 +24,7 @@ public class ExplicitWait {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         //driver.get(URL);
         //driver.get("https://google.com");

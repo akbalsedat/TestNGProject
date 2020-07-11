@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import java.io.File;
 
 public abstract class AbstractTestBase {
     //will be visible in the subclass, regardless on subclass location (same package or no)
@@ -31,9 +30,8 @@ public abstract class AbstractTestBase {
     @BeforeTest
     @Parameters("reportName")
     public void setupTest(@Optional String reportName) {
-        System.out.println("Report name: " + reportName);
         reportName = reportName == null ? "report.html" : reportName + ".html";
-
+        System.out.println("Report name: " + reportName);
         report = new ExtentReports();
 
         String reportPath = "";
@@ -52,7 +50,7 @@ public abstract class AbstractTestBase {
 
     @AfterTest
     public void afterTest() {
-        report.flush();//to release a report
+        report.flush(); //to release a report
     }
 
     @BeforeMethod

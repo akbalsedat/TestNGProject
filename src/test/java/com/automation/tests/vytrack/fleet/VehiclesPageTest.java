@@ -53,7 +53,7 @@ public class VehiclesPageTest {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.firefoxdriver().version("79").setup();
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.get(URL);
         driver.manage().window().maximize();

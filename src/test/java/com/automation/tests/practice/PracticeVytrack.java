@@ -114,7 +114,7 @@ public class PracticeVytrack {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.firefoxdriver().version("74").setup();
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.get(URL);
         BrowserUtil.wait(1);

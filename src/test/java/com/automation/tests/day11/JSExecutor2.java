@@ -24,7 +24,7 @@ public class JSExecutor2 {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.firefoxdriver().version("74").setup();
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.get(URL2);
         driver.manage().window().maximize();

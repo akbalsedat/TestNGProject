@@ -16,9 +16,9 @@ import java.util.Map;
  */
 public class ExcelUtil {
 
-    private Sheet workSheet;
-    private Workbook workBook;
-    private String path;
+    private final Sheet workSheet;
+    private final Workbook workBook;
+    private final String path;
 
     public ExcelUtil(String path, String sheetName) {
         this.path = path;

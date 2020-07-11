@@ -23,12 +23,12 @@ public class Driver {
             String browser = ConfigurationReader.getPropertyLocal("browser").toLowerCase();
             switch (browser) {
                 case "chrome":
-                    WebDriverManager.chromedriver().version("83").setup();
+                    WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
                 case "chromeheadless":
                     //to run chrome without interface (headless mode)
-                    WebDriverManager.chromedriver().version("83").setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.setHeadless(true);
                     driver = new ChromeDriver(options);

@@ -24,7 +24,7 @@ public class WarmUpTask {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get(URL);
         driver.manage().window().maximize();

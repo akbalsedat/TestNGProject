@@ -15,7 +15,7 @@ public class JavaScriptExecutor {
     //private JavascriptExecutor js;
     @BeforeMethod
     public void setup(){
-        WebDriverManager.firefoxdriver().version("74").setup();
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
     }
 

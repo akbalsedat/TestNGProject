@@ -22,7 +22,7 @@ public class WebTables {
 
     @BeforeMethod
     public void setup(){
-        WebDriverManager.firefoxdriver().version("74").setup();
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         //headless mode makes execution faster
         //the execution procedure is same except file uploading
